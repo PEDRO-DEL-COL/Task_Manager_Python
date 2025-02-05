@@ -11,6 +11,8 @@ def load_tasks():
             return json.load(file)
     return []
 
+tasks = load_tasks()
+
 def save_tasks():
     with open(FILE_NAME, "w") as file:
         json.dump(tasks, file, indent=4)
@@ -20,7 +22,8 @@ def show_menu():
     print("1. Add Task")
     print("2. Remove Task")
     print("3. View Task List")
-    print("4. Exit")
+    print("4. Edit task")
+    print("5. Exit")
 
 def add_task():
     task = input("Enter a task: ")
@@ -48,10 +51,30 @@ def show_tasks():
         for i, task in enumerate(tasks, start=1):
             print(f"{i}. {task}")
 
+def edit_task():
+    if not tasks:
+        print("No tasks available to edit.")
+        return
+
+    print("Tasks: ")
+    for i, task in enumerate(tasks):
+        print(f"{i + 1}. {task}")
+
+    try:
+        edit_index = int(input("Type the number of the task you want to edit: ")) - 1
+
+        if 0 <= edit_index < len(tasks):
+            new_task = input("Type the new task: ")
+            tasks[edit_index] = new_task
+            save_tasks()
+            print(f"Task edited succesfuly: {new_task}")
+        else:
+            print("Invalid task number.")
+    except ValueError:
+        print("Type a valid number.")
+
 def quit():
     print("Goodbye!")
-
-tasks = load_tasks()
 
 while True:
     show_menu()
@@ -67,6 +90,9 @@ while True:
         show_tasks()
 
     elif choice == "4":
+        edit_task()
+
+    elif choice == "5":
         quit()
         break
 
