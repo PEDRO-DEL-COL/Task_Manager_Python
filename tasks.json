@@ -1,4 +1,10 @@
 [
-    "finish portifolio",
-    "test task edited"
+    {
+        "name": "finish portifolio",
+        "status": "Pending"
+    },
+    {
+        "name": "study python",
+        "status": "Pending"
+    }
 ]

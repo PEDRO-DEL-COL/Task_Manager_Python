@@ -26,15 +26,17 @@ def show_menu():
     print("5. Exit")
 
 def add_task():
-    task = input("Enter a task: ")
+    task_name = input("Enter a task: ")
+    task = create_task(task_name)
     tasks.append(task)
     save_tasks()
-    print(f"task '{task}' added!")
+    print(f"task '{task_name}' added!")
 
 def remove_task():
     if not tasks:
         print("No tasks to remove!")
     else:
+
         task_num = int(input("Enter the number of the task you want to remove: ")) - 1
         if 0 <= task_num <= len(tasks):
             removed = tasks.pop(task_num)
@@ -47,9 +49,9 @@ def show_tasks():
     if not tasks:
         print("There's no tasks added yet!")
     else:
-        print("\nYour tasks:")
+        print("\nYour tasks:\n")
         for i, task in enumerate(tasks, start=1):
-            print(f"{i}. {task}")
+            print(f"{i}. {task['name']}\n   Status: {task['status']}\n")
 
 def edit_task():
     if not tasks:
@@ -73,6 +75,13 @@ def edit_task():
     except ValueError:
         print("Type a valid number.")
 
+def mark_status():
+    print(".")
+
+def create_task(name):
+    task = {"name": name, "status": "Pending"}
+    return task
+    
 def quit():
     print("Goodbye!")
 
