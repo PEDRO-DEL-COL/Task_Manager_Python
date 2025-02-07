@@ -6,5 +6,9 @@
     {
         "name": "study python",
         "status": "Pending"
+    },
+    {
+        "name": "homework",
+        "status": "Completed"
     }
 ]
