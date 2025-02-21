@@ -10,5 +10,33 @@
     {
         "name": "homework",
         "status": "Completed"
+    },
+    {
+        "name": "buy milk",
+        "status": "Pending"
+    },
+    {
+        "name": "buy milk",
+        "status": "Pending"
+    },
+    {
+        "name": "task 1",
+        "status": "Pending"
+    },
+    {
+        "name": "test task",
+        "status": "Pending"
+    },
+    {
+        "name": "test task 2",
+        "status": "Pending"
+    },
+    {
+        "name": "it worked",
+        "status": "Pending"
+    },
+    {
+        "name": "a janela expande agora",
+        "status": "Pending"
     }
 ]

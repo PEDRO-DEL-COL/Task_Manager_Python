@@ -1,5 +1,9 @@
 import os
 import json
+import tkinter as tk
+
+root = tk.Tk()
+root.title("Task Manager")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -23,7 +27,8 @@ def show_menu():
     print("2. Remove Task")
     print("3. View Task List")
     print("4. Edit task")
-    print("5. Exit")
+    print("5. Change Status")
+    print("6. Exit")
 
 def create_task(name):
     task = {"name": name, "status": "Pending"}
@@ -116,6 +121,11 @@ def change_status():
     
 def quit():
     print("Goodbye!")
+
+root = tk.Tk()
+root.title("Task Manager")
+
+root.mainloop()
 
 while True:
     show_menu()
